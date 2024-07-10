@@ -12,8 +12,8 @@ import com.bricks.test.test.service.ICategoriaService;
 public class CategoriaServiceImpl implements ICategoriaService {
 
 	@Autowired
-	 private  ICategoriaCliente categoriaCliente;
-	 
+	private ICategoriaCliente categoriaCliente;
+
 	@Override
 	public List<Object> getCategorias() {
 		return categoriaCliente.getCategories();

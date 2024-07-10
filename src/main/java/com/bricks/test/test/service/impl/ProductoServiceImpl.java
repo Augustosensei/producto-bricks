@@ -9,17 +9,17 @@ import com.bricks.test.test.entities.Producto;
 import com.bricks.test.test.repository.IProductoRepository;
 import com.bricks.test.test.service.IProductoService;
 
-
 @Service
-public class ProductoServiceImpl implements IProductoService{
-	
-	@Autowired
-    private IProductoRepository productoRepository;
+public class ProductoServiceImpl implements IProductoService {
 
-	@Override 
-	public Page<Producto> findByProductoNamePrice(String name, Double price, Double stock, Integer category, Pageable pageable) {
-	        return productoRepository.findByProductoNamePrice(name, price, stock, category, pageable);
-	    }
+	@Autowired
+	private IProductoRepository productoRepository;
+
+	@Override
+	public Page<Producto> findByProductoNamePrice(String name, Double price, Double stock, Integer category,
+			Pageable pageable) {
+		return productoRepository.findByProductoNamePrice(name, price, stock, category, pageable);
+	}
 
 	@Override
 	public Producto obtenerTPorId(Integer id) throws Exception {
@@ -40,7 +40,5 @@ public class ProductoServiceImpl implements IProductoService{
 	public void eliminarPorId(Integer id) throws Exception {
 		productoRepository.deleteById(id);
 	}
-
-
 
 }

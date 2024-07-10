@@ -15,9 +15,9 @@ public class CategoriaController {
 
 	@Autowired
 	private ICategoriaService categoriaService;
-	
-	   @GetMapping
-	    public List<?> obtenerCategoriasDeProductores() {
-	        return categoriaService.getCategorias();
-	    }
+
+	@GetMapping
+	public List<?> obtenerCategoriasDeProductores() {
+		return categoriaService.getCategorias();
+	}
 }

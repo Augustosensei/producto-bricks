@@ -24,7 +24,5 @@ public class Producto {
 	private Double price;
 	private Double stock;
 	private Integer category;
-	
-	
 
 }

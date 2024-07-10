@@ -10,15 +10,10 @@ import com.bricks.test.test.entities.Producto;
 
 public interface IProductoRepository extends JpaRepository<Producto, Integer> {
 
-	
-	@Query("SELECT p FROM Producto p WHERE " +
-	           "(:name IS NULL OR p.name LIKE %:name%) AND " +
-	           "(:price IS NULL OR p.price = :price) AND " +
-	           "(:stock IS NULL OR p.stock = :stock) AND " +
-	           "(:category IS NULL OR p.category = :category)")
-	    Page<Producto> findByProductoNamePrice(@Param("name") String name,
-	                                           @Param("price") Double price,
-	                                           @Param("stock") Double stock,
-	                                           @Param("category") Integer category,
-	                                           Pageable pageable);
+	@Query("SELECT p FROM Producto p " + "WHERE (:name IS NULL OR p.name LIKE %:name%) "
+			+ "AND (:price IS NULL OR p.price = :price) " + "AND (:stock IS NULL OR p.stock = :stock) "
+			+ "AND (:category IS NULL OR p.category = :category)")
+	Page<Producto> findByProductoNamePrice(@Param("name") String name, @Param("price") Double price,
+			@Param("stock") Double stock, @Param("category") Integer category, Pageable pageable);
+
 }
