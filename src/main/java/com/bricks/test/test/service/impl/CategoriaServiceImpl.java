@@ -22,11 +22,10 @@ public class CategoriaServiceImpl implements ICategoriaService {
     @Override
     @Cacheable(value = "categoriasCache", unless = "#result == null")
     public List<CategoriaDTO> getCategorias() {
-        if (solicitudesDiarias.get() >= 10) {
+        if (solicitudesDiarias.get() > 10) {
             throw new RuntimeException("Se ha alcanzado el límite diario de solicitudes");
         }
-        
-        // Incrementar el contador de solicitudes
+     
         solicitudesDiarias.incrementAndGet();
 
         return categoriaCliente.getCategories();
