@@ -17,6 +17,10 @@ Este proyecto es una aplicación Spring Boot que utiliza Java 17, H2 como base d
 - Gradle
 - Spring Cache (ConcurrentMapCacheManager)
 
+## Consola H2
+
+- http://localhost:8080/h2-console/login.jsp?jsessionid=b7bece69ecb59728e6e5cf3bfd14e228
+
 ## Configuración del Proyecto
 
 ### Dependencias
