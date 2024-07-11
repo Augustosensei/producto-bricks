@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.bricks.test.test.client.ICategoriaCliente;
+import com.bricks.test.test.dtos.CategoriaDTO;
 import com.bricks.test.test.service.ICategoriaService;
 
 @Service
@@ -20,7 +21,7 @@ public class CategoriaServiceImpl implements ICategoriaService {
 
     @Override
     @Cacheable(value = "categoriasCache", unless = "#result == null")
-    public List<Object> getCategorias() {
+    public List<CategoriaDTO> getCategorias() {
         if (solicitudesDiarias.get() >= 10) {
             throw new RuntimeException("Se ha alcanzado el límite diario de solicitudes");
         }
